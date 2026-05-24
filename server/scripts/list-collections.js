@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const listCollections = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/college_management');
+    const mongoUri =
+      process.env.MONGO_URI ||
+      process.env.MONGODB_URI ||
+      'mongodb://localhost:27017/college_management';
+    await mongoose.connect(mongoUri);
     console.log('🔗 Connected to MongoDB');
 
     const db = mongoose.connection.db;

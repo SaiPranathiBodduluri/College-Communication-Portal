@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Set the base URL for all API calls
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'https://college-communication-portal.onrender.com';
 
 // Add a request interceptor to automatically add the token
 axios.interceptors.request.use(

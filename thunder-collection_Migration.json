@@ -8,7 +8,7 @@
     {
       "name": "Run Migration - Update Comments with UserID",
       "method": "POST",
-      "url": "http://localhost:3001/api/setup/migrate-comments",
+      "url": "https://college-communication-portal.onrender.com/api/setup/migrate-comments",
       "headers": [
         {
           "name": "Content-Type",
@@ -25,7 +25,7 @@
     {
       "name": "Test - Create Comment as Student",
       "method": "POST",
-      "url": "http://localhost:3001/api/notices/{{noticeId}}/comments",
+      "url": "https://college-communication-portal.onrender.com/api/notices/{{noticeId}}/comments",
       "headers": [
         {
           "name": "Content-Type",
@@ -46,7 +46,7 @@
     {
       "name": "Test - Get Notice Details",
       "method": "GET",
-      "url": "http://localhost:3001/api/notices/{{noticeId}}",
+      "url": "https://college-communication-portal.onrender.com/api/notices/{{noticeId}}",
       "headers": [
         {
           "name": "Authorization",
