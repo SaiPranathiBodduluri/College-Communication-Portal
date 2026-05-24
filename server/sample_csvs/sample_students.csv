@@ -1,0 +1,5 @@
+name,id,password,email,phoneNumber,dept,year,section,specialRole
+John Doe,231FA04001,Student@123,john@college.edu,9876543210,CSE,2,A,none
+Jane Smith,231FA04002,Student@123,jane@college.edu,9876543211,CSE,2,B,CR
+Rahul Kumar,231FA04003,Student@123,rahul@college.edu,9876543212,CSE,3,A,LR
+Priya Sharma,231FA04004,Student@123,priya@college.edu,9876543213,CSE,3,B,none

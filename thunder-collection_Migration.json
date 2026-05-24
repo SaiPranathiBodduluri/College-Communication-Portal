@@ -1,0 +1,61 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Migration - Fix ID-Name Format",
+  "dateExported": "2025-12-09",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Run Migration - Update Comments with UserID",
+      "method": "POST",
+      "url": "http://localhost:3001/api/setup/migrate-comments",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": ""
+      },
+      "tests": [],
+      "docs": "This endpoint updates all existing comments and acknowledgments to include userId and name fields. Run this after restarting the server to fix the 'ID - Name' display format."
+    },
+    {
+      "name": "Test - Create Comment as Student",
+      "method": "POST",
+      "url": "http://localhost:3001/api/notices/{{noticeId}}/comments",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{studentToken}}"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"content\": \"Test comment to verify ID - Name format\"\n}"
+      },
+      "tests": [],
+      "docs": "Test creating a new comment to verify it includes userId. Replace {{noticeId}} with actual notice ID and {{studentToken}} with student auth token."
+    },
+    {
+      "name": "Test - Get Notice Details",
+      "method": "GET",
+      "url": "http://localhost:3001/api/notices/{{noticeId}}",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ],
+      "body": {},
+      "tests": [],
+      "docs": "Get notice details to verify comments have userId and name fields. Check the response to see if comments include 'userId' field."
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "SCNBCP - Vignan University API",
+  "dateExported": "2024-11-06T07:00:00.000Z",
+  "version": "1.2",
+  "folders": [
+    {
+      "id": "auth-folder",
+      "name": "🔐 Authentication",
+      "containerId": "",
+      "created": "2024-11-06T07:00:00.000Z",
+      "sortNum": 10000
+    },
+    {
+      "id": "notices-folder",
+      "name": "📢 Notices Management",
+      "containerId": "",
+      "created": "2024-11-06T07:00:00.000Z",
+      "sortNum": 20000
+    },
+    {
+      "id": "users-folder",
+      "name": "👥 Users & Dashboard",
+      "containerId": "",
+      "created": "2024-11-06T07:00:00.000Z",
+      "sortNum": 30000
+    }
+  ],
+  "requests": [
+    {
+      "id": "health-check",
+      "name": "🏥 Health Check",
+      "url": "http://localhost:5000/api/health",
+      "method": "GET",
+      "sortNum": 5000,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [],
+      "tests": [],
+      "containerId": ""
+    },
+    {
+      "id": "login-student",
+      "name": "🎓 Login - Student (Aarav)",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"aarav.sharma@vignan.ac.in\",\n  \"password\": \"vignan123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "set-env-var",
+          "custom": "json.token",
+          "action": "setto",
+          "value": "{{student_token}}"
+        }
+      ],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "login-student-2",
+      "name": "🎓 Login - Student (Priya)",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "sortNum": 10100,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"priya.reddy@vignan.ac.in\",\n  \"password\": \"vignan123\"\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "login-faculty",
+      "name": "👨‍🏫 Login - Faculty (Dr. Rajesh)",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "sortNum": 10200,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"rajesh.kumar@vignan.ac.in\",\n  \"password\": \"faculty123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "set-env-var",
+          "custom": "json.token",
+          "action": "setto",
+          "value": "{{faculty_token}}"
+        }
+      ],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "login-admin",
+      "name": "👨‍💼 Login - Admin",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "sortNum": 10300,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"admin@vignan.ac.in\",\n  \"password\": \"admin123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "set-env-var",
+          "custom": "json.token",
+          "action": "setto",
+          "value": "{{admin_token}}"
+        }
+      ],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "get-current-user",
+      "name": "👤 Get Current User",
+      "url": "http://localhost:5000/api/auth/me",
+      "method": "GET",
+      "sortNum": 10400,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "forgot-password-send-otp",
+      "name": "📱 Forgot Password - Send OTP",
+      "url": "http://localhost:5000/api/auth/forgot-password",
+      "method": "POST",
+      "sortNum": 10500,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"aarav.sharma@vignan.ac.in\"\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "verify-otp",
+      "name": "✅ Verify OTP",
+      "url": "http://localhost:5000/api/auth/verify-otp",
+      "method": "POST",
+      "sortNum": 10600,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"aarav.sharma@vignan.ac.in\",\n  \"otp\": \"123456\"\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "reset-password",
+      "name": "🔑 Reset Password",
+      "url": "http://localhost:5000/api/auth/reset-password",
+      "method": "POST",
+      "sortNum": 10700,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"aarav.sharma@vignan.ac.in\",\n  \"otp\": \"123456\",\n  \"newPassword\": \"newpassword123\"\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "auth-folder"
+    },
+    {
+      "id": "get-all-notices",
+      "name": "📋 Get All Notices",
+      "url": "http://localhost:5000/api/notices",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "get-notices-with-filter",
+      "name": "🔍 Get Notices - Filtered",
+      "url": "http://localhost:5000/api/notices?category=academic&page=1&limit=5",
+      "method": "GET",
+      "sortNum": 20100,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "create-notice-faculty",
+      "name": "➕ Create Notice (Faculty)",
+      "url": "http://localhost:5000/api/notices",
+      "method": "POST",
+      "sortNum": 20200,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{faculty_token}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Important CSE Department Notice\",\n  \"content\": \"This is an important notice for all Computer Science Engineering students regarding upcoming examinations and project submissions.\",\n  \"category\": \"academic\",\n  \"priority\": \"high\",\n  \"targetAudience\": {\n    \"roles\": [\"student\"],\n    \"departments\": [\"Computer Science Engineering\"],\n    \"years\": [\"3rd Year\", \"4th Year\"]\n  }\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "set-env-var",
+          "custom": "json._id",
+          "action": "setto",
+          "value": "{{notice_id}}"
+        }
+      ],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "create-notice-admin",
+      "name": "➕ Create Notice (Admin)",
+      "url": "http://localhost:5000/api/notices",
+      "method": "POST",
+      "sortNum": 20300,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{admin_token}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"University-wide Important Announcement\",\n  \"content\": \"This is a university-wide announcement for all students and faculty members regarding upcoming events and policy changes.\",\n  \"category\": \"circular\",\n  \"priority\": \"urgent\",\n  \"targetAudience\": {\n    \"roles\": [\"student\", \"faculty\"],\n    \"departments\": [\"Computer Science Engineering\", \"Electronics and Communication Engineering\", \"Mechanical Engineering\"],\n    \"years\": [\"1st Year\", \"2nd Year\", \"3rd Year\", \"4th Year\"]\n  }\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "get-single-notice",
+      "name": "📄 Get Single Notice",
+      "url": "http://localhost:5000/api/notices/{{notice_id}}",
+      "method": "GET",
+      "sortNum": 20400,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "add-comment",
+      "name": "💬 Add Comment to Notice",
+      "url": "http://localhost:5000/api/notices/{{notice_id}}/comments",
+      "method": "POST",
+      "sortNum": 20500,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"content\": \"Thank you for this important information. When is the deadline for project submission?\"\n}",
+        "form": []
+      },
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "acknowledge-notice",
+      "name": "✅ Acknowledge Notice",
+      "url": "http://localhost:5000/api/notices/{{notice_id}}/acknowledge",
+      "method": "POST",
+      "sortNum": 20600,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "notices-folder"
+    },
+    {
+      "id": "get-dashboard-stats-student",
+      "name": "📊 Dashboard Stats (Student)",
+      "url": "http://localhost:5000/api/users/dashboard",
+      "method": "GET",
+      "sortNum": 30000,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{student_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "users-folder"
+    },
+    {
+      "id": "get-dashboard-stats-admin",
+      "name": "📊 Dashboard Stats (Admin)",
+      "url": "http://localhost:5000/api/users/dashboard",
+      "method": "GET",
+      "sortNum": 30100,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{admin_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "users-folder"
+    },
+    {
+      "id": "get-all-users-admin",
+      "name": "👥 Get All Users (Admin Only)",
+      "url": "http://localhost:5000/api/users",
+      "method": "GET",
+      "sortNum": 30200,
+      "created": "2024-11-06T07:00:00.000Z",
+      "modified": "2024-11-06T07:00:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{admin_token}}"
+        }
+      ],
+      "tests": [],
+      "containerId": "users-folder"
+    }
+  ],
+  "environments": [
+    {
+      "id": "vignan-env",
+      "name": "Vignan University Environment",
+      "default": true,
+      "global": true,
+      "data": [
+        {
+          "name": "base_url",
+          "value": "http://localhost:5000"
+        },
+        {
+          "name": "student_token",
+          "value": ""
+        },
+        {
+          "name": "faculty_token",
+          "value": ""
+        },
+        {
+          "name": "admin_token",
+          "value": ""
+        },
+        {
+          "name": "notice_id",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

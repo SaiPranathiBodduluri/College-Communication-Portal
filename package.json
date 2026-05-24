@@ -1,0 +1,22 @@
+{
+  "name": "scnbcp-root",
+  "version": "1.0.0",
+  "description": "Smart College Notice Board Communication Platform",
+  "scripts": {
+    "server": "cd server && node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && node seed.js"
+  },
+  "keywords": [
+    "notice-board",
+    "college",
+    "communication"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

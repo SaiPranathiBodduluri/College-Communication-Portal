@@ -1,0 +1,6 @@
+adminId,name,email,phoneNumber,homeDept,password,accessDept,accessYear,accessSections
+ADM001,Admin Kumar,admin1@college.edu,9876543210,CSE,Admin@123,CSE,2,"A,B"
+ADM001,Admin Kumar,admin1@college.edu,9876543210,CSE,Admin@123,CSE,3,A
+ADM001,Admin Kumar,admin1@college.edu,9876543210,CSE,Admin@123,ECE,2,C
+ADM002,Admin Priya,admin2@college.edu,9876543211,CSE,Admin@123,CSE,1,"A,B,C"
+ADM002,Admin Priya,admin2@college.edu,9876543211,CSE,Admin@123,CSE,4,B

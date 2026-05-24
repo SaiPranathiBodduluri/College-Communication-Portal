@@ -1,0 +1,41 @@
+{
+  "name": "scnbcp-app",
+  "version": "1.0.0",
+  "description": "Smart College Notice Board & Communication Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "setup": "npm install && npm run install-client",
+    "seed": "node seed.js",
+    "db:export": "node database-utils.js export",
+    "db:import": "node database-utils.js import",
+    "db:generate": "node database-utils.js generate"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.6.1",
+    "emailjs-com": "^3.2.0",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.7",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.1",
+    "socket.io": "^4.7.2",
+    "twilio": "^4.19.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "mongodb-memory-server": "^10.3.0",
+    "nodemon": "^3.0.1"
+  }
+}

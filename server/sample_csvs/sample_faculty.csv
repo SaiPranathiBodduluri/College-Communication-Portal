@@ -1,0 +1,9 @@
+facultyId,name,email,phoneNumber,homeDept,password,accessDept,accessYear,accessSections
+FAC001,Dr. Ramesh Kumar,ramesh@college.edu,9876543210,CSE,Faculty@123,CSE,2,"A,B"
+FAC001,Dr. Ramesh Kumar,ramesh@college.edu,9876543210,CSE,Faculty@123,CSE,3,A
+FAC001,Dr. Ramesh Kumar,ramesh@college.edu,9876543210,CSE,Faculty@123,ECE,2,C
+FAC002,Dr. Priya Sharma,priya@college.edu,9876543211,CSE,Faculty@123,CSE,1,"A,B,C"
+FAC002,Dr. Priya Sharma,priya@college.edu,9876543211,CSE,Faculty@123,CSE,4,B
+FAC003,Dr. Gayathri,gayathri@college.edu,6305684849,ECE,Faculty@123,ECE,3,"A,C"
+FAC003,Dr. Gayathri,gayathri@college.edu,6305684849,ECE,Faculty@123,CSE,2,A
+FAC003,Dr. Gayathri,gayathri@college.edu,6305684849,ECE,Faculty@123,EEE,1,C
